@@ -14,6 +14,7 @@ import axios from "axios";
 
 // Service
 import { getPopularMovies, generateShow } from "./services/tmdb/tmdb.service";
+import NotFoundView from "./views/NotFoundView";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -71,6 +72,7 @@ function App() {
         <Route path="/movies" element={<MoviesView />} />
         <Route path="/movies/:id" element={<SingleView />} />
         <Route path="/upcoming" element={<UpcomingView />} />
+        <Route path="*" element={<NotFoundView />} />
       </Routes>
     </div>
   );
