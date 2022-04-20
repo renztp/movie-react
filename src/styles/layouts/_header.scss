@@ -1,0 +1,41 @@
+header {
+  font-family: "Inter", Arial, sans-serif, serif;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+  }
+
+  .logo {
+    margin-right: 80px;
+  }
+
+  .controls {
+    display: flex;
+    align-items: center;
+  }
+
+  ul li {
+    display: inline-block;
+    font-size: 14px;
+
+    margin-right: 30px;
+    font-weight: 700;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    a {
+      color: #333;
+    }
+  }
+
+  button {
+    background: none;
+    border: none;
+    font-size: 25px;
+  }
+}

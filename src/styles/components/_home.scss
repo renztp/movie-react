@@ -1,0 +1,67 @@
+.featured-section {
+  h1 {
+    font-family: "Lato", Arial, sans-serif, serif;
+    font-size: 22px;
+  }
+
+  .swiper-slide {
+    min-height: 30em;
+    background-size: cover;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 75%;
+      background-image: linear-gradient(to right, #000, rgba(0, 0, 0, 0));
+      z-index: 2;
+    }
+
+    .content {
+      position: relative;
+      z-index: 5;
+      color: #fff;
+      width: 55%;
+      padding: 40px;
+      height: 100%;
+
+      h2 {
+        font-family: "Bebas Neue";
+        font-size: 28px;
+        letter-spacing: 0.03rem;
+      }
+
+      p {
+        font-family: "Noto Sans";
+        font-size: 14px;
+        line-height: 1.8;
+      }
+    }
+    button {
+      position: absolute;
+      bottom: 30px;
+      right: 30px;
+      padding: 6px 16px;
+      border-radius: 15px;
+      border: 1px solid #fff;
+      background: transparent;
+      color: #fff;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+      z-index: 5;
+
+      &:hover {
+        background: #fff;
+        color: #000;
+      }
+    }
+  }
+
+  .swiper {
+    border-radius: 15px;
+    overflow: hidden;
+  }
+}
