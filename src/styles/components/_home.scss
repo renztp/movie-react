@@ -4,6 +4,14 @@
     font-size: 22px;
   }
 
+  .featured-loading {
+    min-height: 480px;
+    border-radius: 15px;
+    opacity: 0.4;
+    background: #333;
+    @include animateCards(0.8s, reverse, infinite);
+  }
+
   .swiper-slide {
     min-height: 30em;
     background-size: cover;

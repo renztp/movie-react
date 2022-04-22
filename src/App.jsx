@@ -4,17 +4,17 @@ import React, { useState, useEffect } from "react";
 import WebFont from "webfontloader";
 
 // React Router Dom
-import { Route, Routes } from "react-router-dom";
+import { useNavigate, Route, Routes } from "react-router-dom";
 import HomeView from "./views/HomeView";
 import MoviesView from "./views/MoviesView";
 import Header from "./components/Header/Header";
 import UpcomingView from "./views/UpcomingView";
-import SingleView from "./views/SingleView";
 import axios from "axios";
 
 // Service
-import { getPopularMovies, generateShow } from "./services/tmdb/tmdb.service";
+import { generateShow } from "./services/tmdb/tmdb.service";
 import NotFoundView from "./views/NotFoundView";
+import SingleMovieView from "./views/SingleMovieView";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -23,26 +23,33 @@ function App() {
     tvSeries: [],
     upcoming: [],
   });
+  let navigate = useNavigate();
+
+  const testRequest = async () => {
+    let response = await generateShow();
+    console.log(response);
+  };
 
   const getOverviewShows = async () => {
+    let featuredShows, tvShows, upcomingShows;
     try {
-      let featuredShows = await generateShow(1, "movie", "popular");
-      let tvShows = await generateShow();
-      let upcomingShows = await generateShow(1, "movie", "upcoming");
-      console.log(tvShows);
+      featuredShows = await generateShow(1, "movie", "popular");
+      tvShows = await generateShow();
+      upcomingShows = await generateShow(1, "movie", "upcoming");
 
-      featuredShows.length = 10;
-      tvShows.length = 10;
+      featuredShows.data.length = 10;
+      tvShows.data.length = 4;
+      upcomingShows.data.length = 4;
 
-      console.log({ featuredShows, tvShows, upcomingShows });
       setShows((prevState) => ({
         ...prevState,
-        featured: featuredShows.data.results,
-        tvSeries: tvShows.data.results,
-        upcoming: upcomingShows.data.results,
+        featured: featuredShows.data,
+        tvSeries: tvShows.data,
+        upcoming: upcomingShows.data,
       }));
     } catch (err) {
       console.log(err);
+      navigate("/404");
     }
   };
 
@@ -53,6 +60,7 @@ function App() {
       },
     });
     getOverviewShows();
+    testRequest();
   }, []);
 
   return (
@@ -69,9 +77,12 @@ function App() {
             />
           }
         />
-        <Route path="/movies" element={<MoviesView />} />
-        <Route path="/movies/:id" element={<SingleView />} />
-        <Route path="/upcoming" element={<UpcomingView />} />
+        <Route path="/movie/:id" element={<SingleMovieView />} />
+
+        <Route path="movies" element={<MoviesView />} />
+        {/* <Route path="movie/:id" element={<SingleMovieView />} /> */}
+        <Route path="upcoming" element={<UpcomingView />} />
+
         <Route path="*" element={<NotFoundView />} />
       </Routes>
     </div>

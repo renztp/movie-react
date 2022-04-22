@@ -4,9 +4,11 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectFade } from "swiper";
+import { useNavigate } from "react-router-dom";
 
 export default function Featured({ featuredItems }) {
   const imageUrl = import.meta.env.VITE_TMDB_IMAGE;
+  let navigate = useNavigate();
 
   const featuredReady = () => {
     if (featuredItems.length > 0) {
@@ -29,13 +31,15 @@ export default function Featured({ featuredItems }) {
                 <h2>{item.title}</h2>
                 <p>{item.overview}</p>
               </div>
-              <button>Watch Show</button>
+              <button onClick={() => navigate("/movie/" + item.id)}>
+                Watch Show
+              </button>
             </SwiperSlide>
           ))}
         </Swiper>
       );
     } else {
-      return <div>Loading...</div>;
+      return <div className="featured-loading"></div>;
     }
   };
 

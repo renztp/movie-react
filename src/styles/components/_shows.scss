@@ -26,20 +26,18 @@
   &__cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    row-gap: 20px;
     column-gap: 20px;
     min-height: 400px;
 
-    div {
+    a {
       background: #333;
       background-size: cover;
       min-height: 400px;
       border-radius: 15px;
       opacity: 0.4;
-      animation-name: loadingCards;
-      animation-duration: 0.5s;
-      animation-timing-function: linear;
-      animation-direction: reverse;
-      animation-fill-mode: forwards;
+
+      @include animateCards(0.5s, reverse, null, forwards);
       position: relative;
       display: grid;
       place-items: center;
@@ -60,7 +58,8 @@
       }
 
       &.loading-cards {
-        animation: loadingCards 0.8s linear infinite reverse;
+        // animation: loadingCards 0.8s linear infinite reverse;
+        @include animateCards(0.8s, reverse, infinite);
       }
 
       p {

@@ -18,9 +18,9 @@ export default function Header() {
             <li>
               <Link to="/movies">Movies</Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/tvshows">TV Shows</Link>
-            </li>
+            </li> */}
             <li>
               <Link to="/upcoming">Upcoming</Link>
             </li>

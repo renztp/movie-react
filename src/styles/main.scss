@@ -2,10 +2,12 @@
 
 // Base
 @import "./base/normalize";
+@import "./base/mixins";
 @import "./base/base";
 
 // Layouts
 @import "./layouts/header";
+@import "./layouts/single";
 
 // Components Styles
 @import "./components/shows";

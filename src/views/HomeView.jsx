@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Featured from "../components/Featured";
 import ShowGroup from "../components/ShowGroup";
-import { getPopularMovies, generateShow } from "../services/tmdb/tmdb.service";
+import { generateShow } from "../services/tmdb/tmdb.service";
 
 export default function HomeView({ featured, tvSeries, upcoming }) {
   useEffect(() => {
-    console.log("mounted");
+    console.log("- HomeView mounted");
   }, []);
 
   return (

@@ -1,0 +1,118 @@
+.single-view {
+  .overview {
+    display: flex;
+    column-gap: 30px;
+    margin-bottom: 3em;
+
+    &__cover {
+      flex: 0 378px;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        height: 568px;
+      }
+    }
+
+    &__info {
+      flex: 1;
+      position: relative;
+
+      .rating {
+        svg {
+          margin-right: 5px;
+          color: gold;
+        }
+        font-family: "Lato";
+        font-weight: 600;
+        font-size: 22px;
+      }
+
+      h2 {
+        font-family: "Bebas Neue";
+        font-size: 33px;
+        margin: 8px 0 0 0;
+      }
+
+      p {
+        font-family: "Noto Sans";
+        font-size: 18px;
+        line-height: 1.5;
+        margin-top: 8px;
+      }
+
+      .actors h4 {
+        font-family: "Noto Sans";
+        font-size: 18px;
+      }
+
+      .actors ul {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 15px;
+        row-gap: 15px;
+
+        li {
+          display: flex;
+          align-items: center;
+        }
+
+        img {
+          // border-radius: 50%;
+          object-fit: cover;
+          width: 55px;
+          height: auto;
+          margin-right: 8px;
+        }
+
+        h5 {
+          margin: 0;
+        }
+      }
+
+      .controls {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+    }
+  }
+
+  .miscdata {
+    font-family: "Noto Sans";
+    font-weight: 400;
+    .companies {
+      display: grid;
+      list-style: none;
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    .companies li {
+      display: inline-block;
+      text-align: center;
+    }
+    .companies img,
+    .companies svg {
+      width: 55px;
+      height: 55px;
+      object-fit: cover;
+    }
+  }
+
+  .similar-movies {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 20px;
+    list-style: none;
+    font-family: "Noto Sans";
+    font-weight: 400;
+    font-style: italic;
+
+    li img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@keyframes loadingCards {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+
+@mixin animateCards(
+  $duration,
+  $direction: reverse,
+  $iteration: null,
+  $ifKeep: null
+) {
+  animation-name: loadingCards;
+  animation-timing-function: linear;
+  animation-direction: $direction;
+  animation-duration: $duration;
+  @if ($iteration) {
+    animation-iteration-count: infinite;
+  } @else {
+    // Do Nothing
+  }
+  @if ($ifKeep) {
+    animation-fill-mode: $ifKeep;
+  } @else {
+    // Do Nothing
+  }
+}
