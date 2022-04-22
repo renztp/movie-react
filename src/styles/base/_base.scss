@@ -39,3 +39,33 @@ ul {
     animation-timing-function: cubic-bezier(0.72, -0.3, 0.36, 1.45);
   }
 }
+
+.not-found {
+  min-height: 65em;
+  display: grid;
+  place-items: center;
+  font-family: "Noto Sans";
+  letter-spacing: 0.03em;
+
+  .content {
+    text-align: center;
+  }
+
+  h1 {
+    font-family: "Bebas Neue";
+    font-size: 5rem;
+    margin-bottom: 0;
+  }
+
+  p {
+    margin-bottom: 3em;
+    font-size: 1.2rem;
+  }
+
+  a {
+    padding: 16px 28px;
+    background: #333;
+    color: #fff;
+    border-radius: 15px;
+  }
+}

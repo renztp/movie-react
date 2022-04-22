@@ -15,6 +15,7 @@ import axios from "axios";
 import { generateShow } from "./services/tmdb/tmdb.service";
 import NotFoundView from "./views/NotFoundView";
 import SingleMovieView from "./views/SingleMovieView";
+import Footer from "./components/Footer";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -85,6 +86,7 @@ function App() {
 
         <Route path="*" element={<NotFoundView />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

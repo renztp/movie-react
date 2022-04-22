@@ -1,0 +1,31 @@
+footer {
+  margin-top: 7em;
+  border-top: 1px solid #ccc;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5em 0;
+  }
+
+  ul {
+    display: inline-block;
+    list-style: none;
+    font-family: "Noto Sans";
+    font-weight: 600;
+
+    li {
+      display: inline-block;
+      margin-right: 30px;
+    }
+
+    li a {
+      color: #000;
+    }
+  }
+
+  p {
+    font-style: italic;
+  }
+}
