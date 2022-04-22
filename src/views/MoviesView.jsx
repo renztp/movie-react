@@ -16,6 +16,7 @@ export default function MoviesView() {
       console.log(err);
       navigate("/404");
     }
+    console.log(showsData);
     setShows(showsData.data);
   };
 
