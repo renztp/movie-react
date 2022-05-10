@@ -81,7 +81,6 @@ function App() {
         <Route path="/movie/:id" element={<SingleMovieView />} />
 
         <Route path="movies" element={<MoviesView />} />
-        {/* <Route path="movie/:id" element={<SingleMovieView />} /> */}
         <Route path="upcoming" element={<UpcomingView />} />
 
         <Route path="*" element={<NotFoundView />} />
