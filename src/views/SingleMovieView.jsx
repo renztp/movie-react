@@ -87,11 +87,7 @@ export default function SingleMovieView() {
               <ul className="similar-movies">
                 {showSimilar.map((item) => (
                   <li key={item.id}>
-                    <Link
-                      to={`/movie/${item.id}`}
-                      replace
-                      reloadDocument={true}
-                    >
+                    <Link to={`/movie/${item.id}`} replace>
                       <img src={`${imageUrl}w500${item.poster_path}`} alt="" />
                       <p>{item.title}</p>
                     </Link>
@@ -113,7 +109,7 @@ export default function SingleMovieView() {
     testFetch();
     console.log(showSimilar);
     setIsLoading(false);
-  }, []);
+  }, [params]);
 
   useEffect(() => {}, [showData]);
 
